@@ -1,0 +1,7 @@
+target/
+.elasticbeanstalk/
+*.iml
+.idea
+
+
+
