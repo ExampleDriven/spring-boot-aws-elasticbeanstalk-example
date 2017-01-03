@@ -1,18 +1,36 @@
 ## Steps
 ### Prerequisites 
-1. Install eb CLI http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html#eb-cli3-install-osx
+1. Install eb CLI http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html
 2. Change application to listen on port 5000
 3. eb init
+4. To make EB deploy artifact instead of source code add the following
 
-## Create the AWS application (only needed if not already exists)
-6. mvn clean install
-5. eb create (needed only if the application is not yet created)
+```bash
+deploy:
+     artifact: target/spring-boot-aws-example-0.0.1-SNAPSHOT.jar
+```
+
+## Create the EB application and environment (only needed if not already exists)
+5. mvn clean install (this is needed so the environment can be created and artifacts deployed immediately)
+6. eb create or eb create -s to create without loadbalancer
 
 ## Deploy to an already existing AWS application
-6. mvn clean install
-6. eb deploy (in all consecutive occurrences)
+7. mvn clean install
+8. eb deploy
 
 ## Cleanup
-To avoid being charged stop or delete all infrastructure components created, including :
+To avoid being charged, stop or delete all infrastructure components created, including :
 - EC2 instances
 - Load balancers
+
+The easiest and safest way to do it is to use the command line
+
+```bash
+# list all eb environments
+eb list
+
+# terminate an environment
+eb terminate <<env name>>
+```
+
+
