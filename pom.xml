@@ -23,6 +23,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+
+        <!-- Beanstalker-->
+        <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+        <beanstalk.versionLabel>${maven.build.timestamp}</beanstalk.versionLabel>
     </properties>
 
     <dependencies>
@@ -49,8 +53,12 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>br.com.ingenieux</groupId>
+                <artifactId>beanstalk-maven-plugin</artifactId>
+                <version>1.5.0</version>
+            </plugin>
         </plugins>
     </build>
-
 
 </project>
