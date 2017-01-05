@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.exampledriven</groupId>
-    <artifactId>spring-boot-aws-example</artifactId>
+    <artifactId>spring-boot-aws-elasticbeanstalk-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>spring-boot-aws-example</name>
+    <name>spring-boot-aws-elasticbeanstalk-example</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -52,11 +52,34 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build-info</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <configuration>
+                    <dotGitDirectory>../.git</dotGitDirectory>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>br.com.ingenieux</groupId>
                 <artifactId>beanstalk-maven-plugin</artifactId>
                 <version>1.5.0</version>
+                <configuration>
+                    <applicationName>spring-boot-aws-elasticbeanstalk-example</applicationName>
+                    <s3Bucket>szp-spring-boot-aws-example</s3Bucket>
+                    <s3Key>${project.artifactId}/${project.build.finalName}.jar</s3Key>
+                    <cnamePrefix>szp-spring-boot-aws-elasticbeanstalk-example-dev-mvn2</cnamePrefix>
+                    <environmentName>dev-mvn</environmentName>
+                    <environmentRef>dev-mvn</environmentRef>
+                    <solutionStack>64bit Amazon Linux 2016.09 v2.4.0 running Java 8</solutionStack>
+                </configuration>
             </plugin>
         </plugins>
     </build>

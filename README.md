@@ -18,6 +18,17 @@ deploy:
 7. mvn clean install
 8. eb deploy
 
+
+
+## Using the beanstalker maven plugin
+Create environment
+ 
+    mvn beanstalk:upload-source-bundle beanstalk:create-application-version beanstalk:create-environment
+
+Update application
+
+    mvn beanstalk:upload-source-bundle beanstalk:create-application-version beanstalk:update-environment
+
 ## Cleanup
 To avoid being charged, stop or delete all infrastructure components created, including :
 - EC2 instances
