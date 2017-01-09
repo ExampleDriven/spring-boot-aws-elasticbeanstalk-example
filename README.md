@@ -1,3 +1,10 @@
+[![Build Status](https://travis-ci.org/ExampleDriven/spring-boot-aws-elasticbeanstalk-example.svg?branch=master)](https://travis-ci.org/ExampleDriven/spring-boot-aws-elasticbeanstalk-example)
+
+This is the source code for the blog post
+
+https://exampledriven.wordpress.com/2017/01/09/spring-boot-aws-elastic-beanstalk-example/
+
+
 ## Steps
 ### Prerequisites 
 1. Install eb CLI http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html
