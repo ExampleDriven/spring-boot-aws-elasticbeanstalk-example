@@ -1,0 +1,18 @@
+branch-defaults:
+  default:
+    environment: dev-mvn
+    group_suffix: null
+  master:
+    environment: dev-mvn
+    group_suffix: null
+deploy:
+  artifact: target/spring-boot-aws-elasticbeanstalk-example-0.0.1-SNAPSHOT.jar
+global:
+  application_name: spring-boot-aws-elasticbeanstalk-example
+  branch: null
+  default_ec2_keyname: aws
+  default_platform: Java 8
+  default_region: us-east-1
+  profile: eb-cli
+  repository: null
+  sc: null
