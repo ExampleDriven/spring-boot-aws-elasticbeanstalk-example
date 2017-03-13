@@ -1,0 +1,32 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "service1",
+      "image": "szantopeter/eb-spring-boot-demo",
+      "essential": true,
+      "memory": 256,
+      "portMappings": [
+        {
+          "hostPort": 5000,
+          "containerPort": 5000
+        }
+      ]
+	}, 
+	{	  
+      "name": "service2",
+      "image": "szantopeter/eb-spring-boot-demo",
+      "essential": true,
+      "memory": 256,
+      "portMappings": [
+        {
+          "hostPort": 5001,
+          "containerPort": 5000
+        }
+      ],
+      "links": [
+        "service1"
+      ]	  
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+branch-defaults:
+  default:
+    environment: devlopment
+    group_suffix: null
+global:
+  application_name: spring-boot-aws-elasticbeanstalk-docker-example2
+  branch: null
+  default_ec2_keyname: aws
+  default_platform: Multi-container Docker 1.12.6 (Generic)
+  default_region: us-east-1
+  profile: eb-cli
+  repository: null
+  sc: null

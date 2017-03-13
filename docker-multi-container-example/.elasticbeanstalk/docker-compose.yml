@@ -1,0 +1,10 @@
+service1:
+  image: szantopeter/eb-spring-boot-demo
+  ports:
+  - 5000:5000
+service2:
+  image: szantopeter/eb-spring-boot-demo
+  links:
+  - service1:service1
+  ports:
+  - 5001:5000
