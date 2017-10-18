@@ -10,7 +10,7 @@ https://exampledriven.wordpress.com/2017/01/09/spring-boot-aws-elastic-beanstalk
 1. Install eb CLI http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html
 2. Change application to listen on port 5000
 3. eb init
-4. To make EB deploy artifact instead of source code add the following
+4. To make EB deploy artifact instead of source code add the following to .elasticbeanstalk/config.yml
 
 ```bash
 deploy:
