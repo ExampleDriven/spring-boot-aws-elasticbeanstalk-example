@@ -1,6 +1,6 @@
 branch-defaults:
   default:
-    environment: devlopment
+    environment: development
     group_suffix: null
 global:
   application_name: spring-boot-aws-elasticbeanstalk-docker-example2
